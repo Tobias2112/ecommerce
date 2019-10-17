@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.ventana {
+  background: linear-gradient(to top right, orangered 0%, orange 100%);
+  color: white;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  height: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  letter-spacing: 2px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Hind Siliguri", sans-serif;
+  flex-direction: column;
+}
+
+.ventana h1 {
+  font-size: 35px;
+}
+
+.ventana p {
+  font-size: 25px;
+}
+
+.ventana a {
+  display: block;
+  padding: 15px;
+  width: 100px;
+  border-radius: 15px;
+  background: black;
+  color: white;
+  text-transform: uppercase;
+
+  text-decoration: none;
+}

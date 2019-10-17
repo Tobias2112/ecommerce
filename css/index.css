@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "DCComics";
+  src: url("../fuentes/dc/DCComics.eot?#iefix") format("embedded-opentype"),
+    url("../fuentes/dc/DCComics.woff") format("woff"),
+    url("../fuentes/dc/DCComics.ttf") format("truetype"),
+    url("DCComics.svg#DCComics") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-style: "Staatliches", cursive;
+}
+
+body,
+html {
+  height: 95.5%;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  background: black;
+  height: 100%;
+}
+
+.banner__item {
+  flex: 1;
+  font-weight: bold;
+  font-size: 1.2em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: flex-grow 0.2s;
+}
+
+.banner__item:hover {
+  flex-grow: 4;
+}
+
+.banner__item:nth-child(1) {
+  background: red;
+}
+
+.banner__item:nth-child(2) {
+  background: black;
+}
+
+/* MARVEL */
+.marvel {
+  text-decoration: none;
+  color: white;
+  font-size: 2em;
+  transition: all 0.2s;
+}
+
+.marvel:hover {
+  border: 2px solid black;
+  border-radius: 7px;
+  padding: 5px;
+  font-size: 6em;
+  box-shadow: 0px 0px 6px 2px black;
+}
+/* MARVEL */
+
+/* DC */
+.dc {
+  font-family: "DCComics";
+  text-decoration: none;
+  color: white;
+  font-size: 8em;
+  transition: all 0.2s;
+}
+
+.dc:hover {
+  border-radius: 7px;
+  padding: 5px;
+  font-size: 10em;
+  box-shadow: 0px 0px 6px 2px;
+}
+/* DC */
+
+@media screen and (min-width: 778px) {
+  .banner {
+    flex-direction: row;
+  }
+
+  body,
+  html {
+    height: 95.5%;
+  }
+}

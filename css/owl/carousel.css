@@ -1,0 +1,84 @@
+.slider {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.owl-nav {
+  font-size: 40px;
+  right: 28px;
+  position: absolute;
+  top: 225px;
+  width: 100%;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.owl-item {
+  border-bottom: none;
+}
+
+.owl-nav button {
+  width: 50px;
+  outline: none !important;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent !important;
+}
+
+.owl-nav button span {
+  position: absolute;
+  top: -4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-height: 50px;
+  width: 100%;
+  border-radius: 100px;
+  background: white;
+  box-shadow: 0px 0px 12px 3px black;
+  max-width: 50px;
+}
+
+.slider:hover .owl-next,
+.slider:hover .owl-prev {
+  opacity: 1;
+  transition: all 0.5s;
+}
+.owl-prev,
+.owl-next {
+  z-index: 2;
+  opacity: 0;
+}
+.owl-stage-outer {
+  z-index: 1;
+}
+
+.owl-next {
+  position: relative;
+  right: -70px;
+}
+
+.owl-dots {
+  width: 100%;
+}
+
+.owl-dots .owl-dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 20px;
+  margin-right: 5px;
+  background: white;
+  border: 1px solid black !important;
+}
+
+.owl-dots .active {
+  background: black !important;
+}

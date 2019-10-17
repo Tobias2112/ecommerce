@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: whitesmoke;
+}
+/* DIV CON TODA LA INFORMACION DEL PRODUCTO  */
+
+.producto {
+  font-family: "Nunito", sans-serif !important;
+  width: 100%;
+  max-width: 1000px;
+  margin: 100px auto;
+  display: flex;
+}
+
+.producto .caract {
+  padding: 20px;
+  padding-left: 100px;
+  font-size: 20px;
+}
+
+.producto .imagen {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+
+  border-radius: 20px;
+}
+
+.producto .nombre {
+  font-size: 40px;
+  color: #25272c;
+  line-height: 1.1;
+}
+
+.producto .precio {
+  margin: 50px 0;
+  color: #ce5052;
+  line-height: 1.1;
+  font-size: 36px;
+}
+
+.producto .caract .descripcion {
+  color: #858585;
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: 1;
+  text-align: justify;
+  margin-bottom: 14%;
+}
+
+.producto .imagen img {
+  height: 500px;
+  vertical-align: center;
+  -webkit-box-shadow: 1px -1px 16px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px -1px 16px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px -1px 16px 3px rgba(0, 0, 0, 0.75);
+}
+
+.btn_buy {
+  height: 34px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn_buy button {
+  margin: 0;
+  outline: none;
+  background: #ca7379;
+  width: 161px;
+  height: 100%;
+  max-height: 50px;
+  padding: 8px 40px;
+  font-size: 11px;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+
+.btn_buy a:hover button {
+  background: white;
+  border: 2px solid #ca7379 !important;
+  color: #ca7379;
+}
+
+.btn_buy button a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn_buy a {
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (max-width: 807px) {
+  .producto {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 35px auto !important;
+  }
+
+  .producto .caract {
+    padding: 20px 50px !important;
+  }
+}
+
+@media screen and (max-width: 487px) {
+  .btn_buy {
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .btn_buy a {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,106 @@
+.footer {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  background: #192a56;
+  box-shadow: 1px 1px 5px black;
+  padding: 20px 0px;
+}
+
+.redes-sociales {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.redes-sociales .fa-facebook-f {
+  color: #3b5998 !important;
+}
+.redes-sociales .fa-instagram {
+  color: #125688 !important;
+}
+.redes-sociales .fa-twitter {
+  color: #55acee !important;
+}
+.redes-sociales .fa-youtube {
+  color: #bb0000 !important;
+}
+
+.redes-sociales ul {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+.redes-sociales ul li {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 0px 10px;
+  border-radius: 100%;
+
+  background: white;
+}
+.redes-sociales ul li a {
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+}
+.redes-sociales ul li a i {
+  line-height: 50px;
+}
+.redes-sociales ul li:hover {
+  background: #197ee3;
+  transition: all 0.5s;
+}
+
+.redes-sociales ul li:hover i {
+  color: white !important;
+  transition: all 0.5s;
+}
+.footer-menu {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  margin-top: 20px;
+}
+.footer-menu ul {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+.footer-menu ul li {
+  display: inline-block;
+  padding: 0px 15px;
+  border-right: 1px solid white;
+}
+
+.footer-menu ul li a {
+  font-family: arial;
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 1px;
+  text-decoration: none;
+  outline: none;
+  text-decoration: uppercase;
+}
+.footer-menu ul li a:hover {
+  color: orange;
+}
+
+.footer-abajo {
+  width: auto;
+  height: auto;
+  margin: auto;
+  background: #273c91;
+  padding: 10px;
+}
+.footer-abajo p {
+  font-family: arial;
+  font-size: 14px;
+  text-align: center;
+  color: #e8f2fc;
+  font-weight: 600;
+  letter-spacing: 1px;
+}

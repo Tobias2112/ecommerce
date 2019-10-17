@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+
+  letter-spacing: 1px;
+}
+
+body {
+  background: whitesmoke;
+}
+
+.filtros {
+  margin: 50px auto 20px auto;
+  width: 70%;
+  display: none;
+  padding: 20px;
+  font-size: 17px;
+  align-items: center;
+  justify-content: space-around;
+  background: #005fbf;
+  color: white;
+  border-radius: 50px;
+}
+
+.filtros a {
+  color: white;
+  font-size: 20px;
+  text-decoration: underline red;
+}
+
+.contenedor {
+  display: flex;
+  font-family: "Staatliches", cursive;
+  flex-flow: row wrap;
+  margin: 100px auto;
+  width: 70%;
+}
+
+#prod {
+  width: 100%;
+  max-width: 263px;
+  margin: 0 auto;
+  margin-bottom: 14px;
+  padding: 10px;
+  border-radius: 11px;
+  box-shadow: 0px 0px 6px 1px black;
+}
+
+.imagen {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.imagen img {
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: 0.5 ease;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay a {
+  color: white;
+  background-color: #5564eb;
+  border-radius: 32%;
+  padding: 10px;
+  font-size: 22px;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.overlay a:hover {
+  rotate: 100%;
+
+  transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+}
+
+.imagen:hover .overlay {
+  width: 20%;
+  transition: all 0.3s;
+}
+
+.nombre {
+  font-size: 16px;
+  width: 100%;
+  height: 50px;
+  color: black;
+}
+
+.nombre a {
+  text-decoration: none;
+  color: black;
+}
+
+.nombre a:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.precio {
+  text-align: start;
+  color: blue;
+  font-size: 23px;
+}
+
+.img-prod {
+  display: inline-block;
+
+  height: 267px;
+  width: 70%;
+}
