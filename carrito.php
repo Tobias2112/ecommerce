@@ -18,6 +18,7 @@
      <link rel="stylesheet" href="css/carrito/estilos.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
     
 </head>
 
@@ -62,7 +63,7 @@ if(isset($_SESSION['nueva'])){
   <div class="item">
     <div class="buttons">
       <span class="delete-btn"></span>
-      <span class="like-btn" onclick="animacion()"></span>
+      <span class="like-btn"></span>
     </div>
  
     <div class="image">
@@ -90,7 +91,42 @@ if(isset($_SESSION['nueva'])){
  
 </div>
 
-<script src="js/carrito/carrito.js"></script>
+<script type="text/javascript">
+      $('.minus-btn').on('click', function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        var $input = $this.closest('div').find('input');
+        var value = parseInt($input.val());
+
+        if (value > 1) {
+          value = value - 1;
+        } else {
+          value = 0;
+        }
+
+        $input.val(value);
+
+      });
+
+      $('.plus-btn').on('click', function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        var $input = $this.closest('div').find('input');
+        var value = parseInt($input.val());
+
+        if (value < 100) {
+          value = value + 1;
+        } else {
+          value =100;
+        }
+
+        $input.val(value);
+      });
+
+      $('.like-btn').on('click', function() {
+        $(this).toggleClass('is-active');
+      });
+    </script>
 
 <?php
 

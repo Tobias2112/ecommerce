@@ -1,8 +1,8 @@
 $('.like-btn').on('click', function() {
-    $(this).toggleClass('is-active');
- });
+   $(this).toggleClass('is-active');
+});
 
- $('.minus-btn').on('click', function(e) {
+$('.minus-btn').on('click', function(e) {
     e.preventDefault();
     var $this = $(this);
     var $input = $this.closest('div').find('input');
