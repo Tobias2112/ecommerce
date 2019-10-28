@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/carrito/carrito.css"> 
      <link rel="stylesheet" href="css/carrito/estilos.css">
+     <link rel="stylesheet" href="css/buscador.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
@@ -133,6 +134,7 @@ if(isset($_SESSION['nueva'])){
 include("include/footer.html");
 
 ?>
-
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/buscador.js"></script>
 </body>
 </html>
