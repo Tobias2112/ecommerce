@@ -1,21 +1,7 @@
 
- <?php 
-      
-      $id = $_REQUEST['comic'];
-
-      include("sql/conexion.php");
-
-      $sql = "SELECT * FROM comics WHERE id='$id'";
-
-      $resultado = mysqli_query($conexion,$sql);
-
-      $row = mysqli_fetch_assoc($resultado);
-
-    
-    ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <title> <?php echo $row['nombre']; ?> </title>
@@ -26,7 +12,8 @@
     <link rel="stylesheet" href="css/producto.css">
     <link rel="stylesheet" href="css/login/log.css">
     <link rel="stylesheet" href="css/login/animated.css">   
-    <link rel="stylesheet" href="css/modal.css">  
+    <link rel="stylesheet" href="css/modal.css"> 
+    <link rel="stylesheet" href="css/buscador.css"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +22,6 @@
   <body>
 
   <?php
-
 session_start();
 
 if(isset($_SESSION['nueva'])){
@@ -76,6 +62,20 @@ if(isset($_SESSION['nueva'])){
     </div>
 
 
+ <?php 
+      
+      $id = $_REQUEST['comic'];
+
+      include("sql/conexion.php");
+
+      $sql = "SELECT * FROM comics WHERE id='$id'";
+
+      $resultado = mysqli_query($conexion,$sql);
+
+      $row = mysqli_fetch_assoc($resultado);
+
+    
+    ?>
 
     <div class="producto">
 
@@ -113,5 +113,7 @@ if(isset($_SESSION['nueva'])){
 
     <?php include ("include/footer.html"); ?>
     <script src="js/login/log.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/buscador.js"></script>
   </body>
 </html>

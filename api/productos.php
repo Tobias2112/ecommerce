@@ -4,7 +4,8 @@ $parametros = NULL;
 if ($_SERVER['REQUEST_METHOD'] == "GET")
 {
     $parametros = $_GET;
-    $mysqli = new mysqli("localhost", "id11022301_tobias2112", "tobias2112", "id11022301_atomic_comic");
+    // $mysqli = new mysqli("localhost", "id11022301_atomic", "tobias43314", "id11022301_atomic_comic");
+    $mysqli = new mysqli("localhost", "root", "", "atomic_comic");
     if ($mysqli->connect_errno) {
         echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
     }
@@ -48,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
     } else {
         $parametros = $_POST;
     }
-    $mysqli = new mysqli("localhost", "id11022301_tobias2112", "tobias2112", "id11022301_atomic_comic");
+    $mysqli = new mysqli("localhost", "root", "", "atomic_comic");
     if ($mysqli->connect_errno) {
         echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
     }
