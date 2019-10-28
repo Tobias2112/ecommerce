@@ -36,33 +36,29 @@
 session_start();
 
 if(isset($_SESSION['nueva'])){
-    include("include/sesion_header.php");
+  include("include/sesion_header.php");
+  include("include/sesion_nav.html");
 
-    include ("sql/conexion.php");
+  include ("sql/conexion.php");
 
-    $sql= "SELECT verificacion FROM usuario WHERE email='".$_SESSION['nueva']."'";
-    $consulta = mysqli_query($conexion,$sql);
-    $row = mysqli_fetch_assoc($consulta);
+  $sql= "SELECT verificacion FROM usuario WHERE email='".$_SESSION['nueva']."'";
+  $consulta = mysqli_query($conexion,$sql);
+  $row = mysqli_fetch_assoc($consulta);
 
-    if($row['verificacion'] == "no verificado"){
-      echo " <div class='confirm'>
-    <p>
-       <i class='fas fa-exclamation-triangle'></i>
-       Porfavor has la verificacion de la cuenta
-    </p>
-  </div>";
-    }
-
-  }else{
-    include("include/header.html");
-    session_destroy();
+  if($row['verificacion'] == "no verificado"){
+    echo " <div class='confirm'>
+  <p>
+     <i class='fas fa-exclamation-triangle'></i>
+     Porfavor has la verificacion de la cuenta
+  </p>
+</div>";
   }
 
-
-
-
-?>
-<?php  include("include/nav.html");  ?>
+}else{
+  include("include/header.html");
+  include("include/nav.html");
+  session_destroy();
+}  ?>
 <!-- MODAL -->
 <div id="open-modal" class="modal-window">
   <div>

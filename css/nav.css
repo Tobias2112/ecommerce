@@ -12,6 +12,10 @@ body {
   text-transform: capitalize;
 }
 
+.menu ul > li {
+  display: none;
+}
+
 .nda {
   display: none;
 }
@@ -87,6 +91,10 @@ body {
     transition: all 0.5s;
   }
 
+  .menu a {
+    border-right: none !important;
+  }
+
   #btn-menu:checked ~ .menu {
     margin-left: 0;
   }
@@ -121,5 +129,34 @@ body {
 
   .menu li {
     border-bottom: 1px solid white;
+  }
+
+  .menu ul > li {
+    height: 59px !important;
+    display: flex;
+  }
+
+  .menu ul > li .log {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .menu ul > li .log > a {
+    border-top: none !important;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  .menu ul > li .log i.fas.fa-user {
+    color: white;
+    font-size: 25px;
+    margin-right: 5px;
+  }
+
+  .menu ul > li .cart {
+    width: auto;
   }
 }

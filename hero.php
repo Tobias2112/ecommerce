@@ -32,6 +32,7 @@ session_start();
 
 if(isset($_SESSION['nueva'])){
     include("include/sesion_header.php");
+    include("include/sesion_nav.html");
 
     include ("sql/conexion.php");
 
@@ -50,14 +51,9 @@ if(isset($_SESSION['nueva'])){
 
   }else{
     include("include/header.html");
+    include("include/nav.html");
     session_destroy();
-  }
-
-
-
-
-?>
-<?php  include("include/nav.html");  ?>
+  } ?>
 
 
 <!-- MODAL -->

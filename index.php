@@ -10,6 +10,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="imagenes/atom.ico">
+  <link rel="stylesheet" href="css/pushbar/pushbar.css">
     <link href="css/index.css" rel="stylesheet">
     <link href="css/header.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
@@ -18,7 +19,7 @@ session_start();
     <link rel="stylesheet" href="css/login/animated.css">   
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/buscador.css">  
-    <link rel="stylesheet" href="css/pushbar/pushbar.css">
+    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   </head>
   <body class="index">
@@ -84,12 +85,18 @@ session_start();
 
 
     </div>
-
+    <!-- pushbar -->
      <div data-pushbar-id="mypushbar1" class="pushbar from_right">
         <button data-pushbar-close><i class="fas fa-times"></i></button>
-        <a href="sql/login/logout.php">Cerrar sesion</a>
+        <form class="pushForm" action="#">
+          <input name="nombre" type="text">
+          <input type="email" name="email" id="">
+          <input name="fechaRegistro" type="text">
+          <input name="ultimaConeccion" type="text">
+        </form>
+        <a class="cerrarSesion" href="sql/login/logout.php">Cerrar sesion</a>
       </div>
-
+      <!-- pushbar -->
 
     <?php
 
