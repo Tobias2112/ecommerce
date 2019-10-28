@@ -172,7 +172,7 @@ $compania = $_REQUEST['compania'];
 		        600:{
 		            items:2,
 		            nav:false
-		        },
+                },
 		        1000:{
 		            items:4,
 		            nav:true,

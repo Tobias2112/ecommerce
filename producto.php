@@ -1,10 +1,19 @@
+<?php
+include("sql/conexion.php");
+ $id = $_REQUEST['comic'];
 
+ $titulo = "SELECT nombre FROM comics WHERE id='$id'";
+$titsql = mysqli_query($conexion, $titulo);
+$sql2 = mysqli_fetch_assoc($titsql);
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title> <?php echo $row['nombre']; ?> </title>
+    <title> <?php echo $sql2['nombre']; ?> </title>
     <link rel="icon" href="imagenes/atom.ico">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/nav.css">
@@ -60,9 +69,9 @@ if(isset($_SESSION['nueva'])){
 
  <?php 
       
-      $id = $_REQUEST['comic'];
+     
 
-      include("sql/conexion.php");
+      
 
       $sql = "SELECT * FROM comics WHERE id='$id'";
 
@@ -89,7 +98,6 @@ if(isset($_SESSION['nueva'])){
         
             <section class="btn_buy">
                  <a href="#"> <button type="button" name="button">ADD TO CART </button>  </a>
-                <a href="#"> <button> Volver  </button> </a>
             </section>
 
             

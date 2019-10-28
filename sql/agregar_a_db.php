@@ -64,11 +64,19 @@ $sql = "INSERT INTO comics (imagen , nombre, descripcion, precio, empresa, produ
 
 $insertar = mysqli_query($conexion,$sql);
 
-
+if($insertar){
+  echo "<script> alert('Comic Agregado Correctamente'); 
+  
+  window.location = 'Add_product.php';
+  
+  </script>";
+      
+  
+}
 
 ?>
 
-<meta http-equiv = "refresh" content = "0; url = Add_product.php" />
+
 
 
 </html>
