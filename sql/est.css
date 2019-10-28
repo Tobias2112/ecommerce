@@ -11,8 +11,18 @@ header {
   color: white;
   background: black;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+header a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  margin-right: 25px;
+  border-bottom: 2px solid white;
+}
 /* FORMULARIO */
 .cont_form {
   display: flex;
@@ -22,7 +32,6 @@ header {
 .heores {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
