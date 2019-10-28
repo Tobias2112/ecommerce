@@ -9,7 +9,6 @@ session_start();
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="icon" href="imagenes/atom.ico">
     <link href="css/index.css" rel="stylesheet">
     <link href="css/header.css" rel="stylesheet">
@@ -17,7 +16,9 @@ session_start();
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/login/log.css">
     <link rel="stylesheet" href="css/login/animated.css">   
-    <link rel="stylesheet" href="css/modal.css">  
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/buscador.css">  
+    <link rel="stylesheet" href="css/pushbar/pushbar.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   </head>
   <body class="index">
@@ -84,7 +85,10 @@ session_start();
 
     </div>
 
-    
+     <div data-pushbar-id="mypushbar1" class="pushbar from_right">
+        <button data-pushbar-close><i class="fas fa-times"></i></button>
+        <a href="sql/login/logout.php">Cerrar sesion</a>
+      </div>
 
 
     <?php
@@ -92,7 +96,19 @@ session_start();
       include("include/footer.html");
 
     ?>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 <script src="js/login/log.js"></script>
-
+<script src="js/buscador.js"></script>
+<script src="js/pushbar/pushbar.js"></script>
+<script type="text/javascript">
+  new Pushbar({
+    blur:true,
+    overlay:true,
+  });
+</script>
+  
   </body>
 </html>

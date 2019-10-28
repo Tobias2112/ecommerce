@@ -20,10 +20,12 @@
   </div>
 
   <div class="log">
-    <a href="sql/login/logout.php" class="user">
+  <button data-pushbar-target="mypushbar1" value=>
+   <!--  <a href="sql/login/logout.php" class="user"> -->
     <i class="fas fa-user"></i>
-      My Cuenta
-    </a>
+      Mi Cuenta
+   
+    </button>
     <a class="cart" href="#"><i class="fas fa-shopping-cart"> </i>
            Carrito
      </a>

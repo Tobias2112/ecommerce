@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-09-2019 a las 01:37:23
--- Versión del servidor: 10.1.31-MariaDB
--- Versión de PHP: 7.2.4
+-- Tiempo de generación: 22-10-2019 a las 02:26:02
+-- Versión del servidor: 10.4.6-MariaDB
+-- Versión de PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -135,7 +135,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_user`, `nombre`, `email`, `contrasenia`, `verificacion`, `codigo`, `fecha_registro`, `ultima_conexion`) VALUES
-(42, 'asd', 'asd@asd.com', '7815696ecbf1c96e6894b779456d330e', 'no verificado', '7815696ecbf1c96e6894b779456d330e0eb178cec364c022a189c3814e5f7483', '  1568747133', '1568747136');
+(44, 'Juan', '123@123.com', '202cb962ac59075b964b07152d234b70', 'verificado', '202cb962ac59075b964b07152d234b70b2d7d2d13aed54c2ed7feb538b382b42', '  1569598840', '1569598859'),
+(45, 'asd', 'asd@asd.com', '7815696ecbf1c96e6894b779456d330e', 'no verificado', '7815696ecbf1c96e6894b779456d330e0eb178cec364c022a189c3814e5f7483', '  1571626088', '1571626092');
 
 --
 -- Índices para tablas volcadas
@@ -179,7 +180,7 @@ ALTER TABLE `heroes`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

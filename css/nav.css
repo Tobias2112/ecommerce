@@ -35,8 +35,8 @@ body {
 #header .fa-bars:hover {
   transition: 0.7s;
   cursor: pointer;
-  background-color: #ffa040;
-  color: black;
+  background-color: #273c91;
+  color: white;
 }
 
 .menu ul {
@@ -79,7 +79,7 @@ body {
 
   .menu {
     position: absolute;
-    background: rgba(204, 102, 0, 0.9);
+    background: rgba(25, 42, 86, 0.9);
     width: 100%;
     z-index: 2;
 

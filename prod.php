@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="css/login/animated.css">  
 
     <link rel="stylesheet" href="css/modal.css">  
-
+    <link rel="stylesheet" href="css/buscador.css">
 
     <title>Comics</title>
 
@@ -132,7 +132,9 @@ if(isset($_SESSION['nueva'])){
 </div>
                 <?php include("include/footer.html");   ?>
                 <script src="js/login/log.js"></script>
+                <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
                 <script src="js/modal.js"></script>
+                <script src="js/buscador.js"></script>
 
 </body>
 </html>
