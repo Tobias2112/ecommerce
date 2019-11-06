@@ -57,90 +57,19 @@ if(isset($_SESSION['nueva'])){
 
 
 
-
-
-
 <?php 
-if(isset($_SESSION['nueva'])){
-	if(isset($_SESSION['carrito'])){	
-		if(isset($_GET['id'])){
-		//ingresa un nuevo product o un producto existente para actualizar cantidad
-		$existe=buscarSiProductoExite($_GET['id']);
-			if($existe==0){
-				//ingresa un nuevo producto
-				agregarNuevoProducto($_GET['id']);
-			}
-		}
-		if(isset($_GET['id_suma'])){
-			sumarCantidad($_GET['id_suma']);
-		}
-		if(isset($_GET['id_resta'])){
-			restarCantidad($_GET['id_resta']);
-		}
-		if(isset($_GET['id_borra'])){
-			eliminarProdCarrito($_GET['id_borra']);
-		}	
-		mostrarProductosCarrito();	
-		if(isset($_SESSION['carrito'])){	
-		echo '<a href="confirmar_compra.php" class="finalizar">Finalizar compra</a><br>';
-		}	
-	}elseif(isset($_GET['id'])){
-		// COMO NO EXISTE $_SESSION['carrito']
-		//quiere decir que ingresa el primer producto al carrito
-		agregarPrimerProducto($_GET['id']);
-		mostrarProductosCarrito();
-		echo '<a href="confirmar_compra.php" class="finalizar">Finalizar compra</a><br>';
-		}else{
-			echo 'carrito vacio'.'<br>';
-		}	
-	echo '<a href="prod.php" class="seguir_viendo">Seguir viendo productos</a>';
-}else{
-	//si no existe $_SESSION['usuario']
-	echo 'Debes iniciar sesion para utilizar el carrito
-		  Iniciar Sesion';
-}
- ?>
+
+if(!isset($_GET['c'])){
+    confirmarCompra();
+    echo '<a class="finalizar" style="margin: 5% auto;" href="confirmar_compra.php?c=1">Confirmar Compra</a>';
+  }else{
+    comprar();
+  }
+?>
 
 
-<script type="text/javascript">
-      $('.minus-btn').on('click', function(e) {
-        e.preventDefault();
-        var $this = $(this);
-        var $input = $this.closest('div').find('input');
-        var value = parseInt($input.val());
-
-        if (value > 1) {
-          value = value - 1;
-        } else {
-          value = 0;
-        }
-
-        $input.val(value);
-
-      });
-
-      $('.plus-btn').on('click', function(e) {
-        e.preventDefault();
-        var $this = $(this);
-        var $input = $this.closest('div').find('input');
-        var value = parseInt($input.val());
-
-        if (value < 100) {
-          value = value + 1;
-        } else {
-          value =100;
-        }
-
-        $input.val(value);
-      });
-
-      $('.like-btn').on('click', function() {
-        $(this).toggleClass('is-active');
-      });
-    </script>
 
 <?php
-
 include("include/footer.html");
 
 ?>
