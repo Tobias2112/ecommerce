@@ -89,10 +89,10 @@ session_start();
      <div data-pushbar-id="mypushbar1" class="pushbar from_right">
         <button data-pushbar-close><i class="fas fa-times"></i></button>
         <form class="pushForm" action="#">
-          <input name="nombre" type="text">
-          <input type="email" name="email" id="">
-          <input name="fechaRegistro" type="text">
-          <input name="ultimaConeccion" type="text">
+          <input name="nombre" type="text" value="juan cruz" disabled>
+          <input type="email" name="email" id="" value="asd@asd.com" disabled>
+          <input name="fechaRegistro" type="text" value="ayer" disabled>
+          <input name="ultimaConeccion" type="text" value="hoy" disabled>
         </form>
         <a class="cerrarSesion" href="sql/login/logout.php">Cerrar sesion</a>
       </div>

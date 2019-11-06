@@ -98,12 +98,12 @@ $compania = $_REQUEST['compania'];
                                                    
                                                    ?>
 
-                                                <a href="agregar_carrito.php?id_user=<?php echo $row2['id_user']; ?>&&?id_prod=<?php echo $row['id']; ?>"><i class="fas fa-cart-plus"></i></a>
+                                                <a href="carrito.php?id=<?php echo $row['id']; ?>"><i class="fas fa-cart-plus"></i></a>
                                                    <?php
                                                 }else{ 
                                         
                                         ?>
-                                        <a href="#"><i class="fas fa-cart-plus"></i></a>
+                                       <a href="carrito.php?id=<?php echo $row['id']; ?>"><i class="fas fa-cart-plus"></i></a>
 
                                                 <?php } ?>
                                     </div>

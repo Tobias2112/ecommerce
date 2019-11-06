@@ -23,7 +23,7 @@ html.pushbar_locked {
 }
 
 .pushbar button {
-  display: block;
+  display: inherit;
   font-size: 25px;
   color: white;
   background: none;
@@ -63,6 +63,9 @@ html.pushbar_locked .pushbar_overlay {
 }
 
 .pushbar.from_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   top: 0;
   right: 0;
   width: 256px;
@@ -103,4 +106,12 @@ html.pushbar_locked .pushbar_overlay {
 
 .pushForm input {
   margin-bottom: 20px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  width: 80%;
+  padding: 5px;
+  font-size: 18px;
+  cursor: not-allowed;
 }

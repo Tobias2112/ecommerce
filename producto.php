@@ -97,7 +97,7 @@ if(isset($_SESSION['nueva'])){
         
         
             <section class="btn_buy">
-                 <a href="#"> <button type="button" name="button">ADD TO CART </button>  </a>
+                 <a href="carrito.php?id=<?php echo $row['id']; ?>"> <button type="button" name="button">Añadir a carrito </button>  </a>
             </section>
 
             

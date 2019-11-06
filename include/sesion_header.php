@@ -26,7 +26,7 @@
       Mi Cuenta
    
     </button>
-    <a class="cart" href="#"><i class="fas fa-shopping-cart"> </i>
+    <a class="cart" href="./carrito.php"><i class="fas fa-shopping-cart"> </i>
            Carrito
      </a>
   </div>
