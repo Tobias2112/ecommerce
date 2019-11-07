@@ -63,6 +63,7 @@ html.pushbar_locked .pushbar_overlay {
 }
 
 .pushbar.from_right {
+  font-family: "Nunito", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -114,4 +115,19 @@ html.pushbar_locked .pushbar_overlay {
   padding: 5px;
   font-size: 18px;
   cursor: not-allowed;
+}
+
+.pushForm label {
+  color: white;
+  text-align: start;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.cerrarSesion {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
 }

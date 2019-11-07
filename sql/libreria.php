@@ -38,7 +38,7 @@ function mostrarProductosCarrito(){
 	//a veces llamamos a la funcion y el carrito ya no existe por ejemplo porque
 	// eliminamos el ultimo producto por lo cual eliminamos la variable de sesion carrito
 	if(!isset($_SESSION['carrito'])){
-	echo "carrito vacio <br>";	
+	echo "<div> carrito vacio </div> <br>";	
 	}else{
 	$total=0;
 	$prods_compra=$_SESSION['carrito'];

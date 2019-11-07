@@ -41,17 +41,17 @@ header {
   transition: 0.4s;
 }
 
-header .log .user{
-    margin: 0 auto;
-    display: block;
-    background-color: #757575;
-    border-radius: 20px;
-    padding: 5px 0;
-    color: white;
-    width: 20%;
-    font-size: 21px;
-    text-align: center;
-    transition: all .5s;
+header .log .user {
+  margin: 0 auto;
+  display: block;
+  background-color: #757575;
+  border-radius: 20px;
+  padding: 5px 0;
+  color: white;
+  width: 20%;
+  font-size: 21px;
+  text-align: center;
+  transition: all 0.5s;
 }
 
 header .log .user:hover {
@@ -59,13 +59,12 @@ header .log .user:hover {
   color: black;
 }
 
-
-.log > button{
-    width: 100%;
-    background-color: transparent;
-    color: white;
-    border: none;
-    outline: none;
+.log > button {
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
 }
 
 .log > button a {
@@ -95,16 +94,19 @@ header .log .user:hover {
   width: 80%;
 }
 
-.buscar-txt::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.buscar-txt::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #c5c2c2;
   opacity: 1; /* Firefox */
 }
 
-.buscar-txt:-ms-input-placeholder { /* Internet Explorer 10-11 */
+.buscar-txt:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
   color: #c5c2c2;
 }
 
-.buscar-txt::-ms-input-placeholder { /* Microsoft Edge */
+.buscar-txt::-ms-input-placeholder {
+  /* Microsoft Edge */
   color: #c5c2c2;
 }
 

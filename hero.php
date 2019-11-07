@@ -7,6 +7,7 @@
     <title>Document</title>
 
     <link rel="icon" href="imagenes/atom.ico">
+      <link rel="stylesheet" href="css/pushbar/pushbar.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/hero.css">
@@ -148,12 +149,44 @@ $compania = $_REQUEST['compania'];
     </div>
 </div>
 
+<!-- pushbar -->
+
+<?php 
+      $sql2 = "SELECT * FROM usuario";
+      $exe = mysqli_query($conexion,$sql2);
+      $row2 = mysqli_fetch_assoc($exe);
+    ?>
+
+     <div data-pushbar-id="mypushbar1" class="pushbar from_right">
+        <button data-pushbar-close><i class="fas fa-times"></i></button>
+        <form class="pushForm" action="#">
+          <label for="nombre">Nombre</label>
+          <input name="nombre" id="nombre" type="text" value="<?php echo $row2['nombre']; ?>" disabled>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" id="" value="<?php echo $row2['email']; ?>" disabled>
+          <label for="fRegistro">Fecha registro</label>
+          <input name="fechaRegistro" id="fRegistro" type="text" value="<?php echo date('d-m-Y',$row2['fecha_registro']); ?>" disabled>
+          <label for="uConexion">Ultima conexion</label>
+          <input name="ultimaConeccion" id="uConexion" type="text" value="<?php echo date('d-m-Y',$row2['ultima_conexion']); ?>" disabled>
+        </form>
+        <a class="cerrarSesion" href="sql/login/logout.php"><i class="fas fa-power-off"></i> Cerrar sesion</a>
+    
+      </div>
+      <!-- pushbar -->
+
 <?php include("include/footer.html") ?>
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
+  <script src="js/pushbar/pushbar.js" type="text/javascript"></script>
+  <script type="text/javascript">
+  new Pushbar({
+    blur:true,
+    overlay:true,
+  });
+</script>
 <script type="text/javascript" src="js/owl/owl.carousel.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){

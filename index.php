@@ -33,7 +33,7 @@ session_start();
 
     if(isset($_SESSION['nueva'])){
       include("include/sesion_header.php");
-
+      
       include ("sql/conexion.php");
 
       $sql= "SELECT verificacion FROM usuario WHERE email='".$_SESSION['nueva']."'";
@@ -86,15 +86,27 @@ session_start();
 
     </div>
     <!-- pushbar -->
+
+    <?php 
+      $sql2 = "SELECT * FROM usuario";
+      $exe = mysqli_query($conexion,$sql2);
+      $row2 = mysqli_fetch_assoc($exe);
+    ?>
+
      <div data-pushbar-id="mypushbar1" class="pushbar from_right">
         <button data-pushbar-close><i class="fas fa-times"></i></button>
         <form class="pushForm" action="#">
-          <input name="nombre" type="text" value="juan cruz" disabled>
-          <input type="email" name="email" id="" value="asd@asd.com" disabled>
-          <input name="fechaRegistro" type="text" value="ayer" disabled>
-          <input name="ultimaConeccion" type="text" value="hoy" disabled>
+          <label for="nombre">Nombre</label>
+          <input name="nombre" id="nombre" type="text" value="<?php echo $row2['nombre']; ?>" disabled>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" id="" value="<?php echo $row2['email']; ?>" disabled>
+          <label for="fRegistro">Fecha registro</label>
+          <input name="fechaRegistro" id="fRegistro" type="text" value="<?php echo date('d-m-Y',$row2['fecha_registro']); ?>" disabled>
+          <label for="uConexion">Ultima conexion</label>
+          <input name="ultimaConeccion" id="uConexion" type="text" value="<?php echo date('d-m-Y',$row2['ultima_conexion']); ?>" disabled>
         </form>
-        <a class="cerrarSesion" href="sql/login/logout.php">Cerrar sesion</a>
+        <a class="cerrarSesion" href="sql/login/logout.php"><i class="fas fa-power-off"></i> Cerrar sesion</a>
+    
       </div>
       <!-- pushbar -->
 

@@ -41,17 +41,15 @@ html {
   flex: 1;
   font-weight: bold;
   font-size: 1.2em;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: flex-grow 0.65s;
-
-
+  transition: flex-grow 0.2s;
 }
 
 .banner__item:hover {
   flex-grow: 4;
-
 }
 
 .banner__item:nth-child(1) {
@@ -59,26 +57,15 @@ html {
   box-shadow: inset 0 0 20px 0px black;
 }
 
-.banner__item:nth-child(1):hover{
-  background-image: url("../imagenes/pp.png");
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size:  100%;
-}
+
 
 .banner__item:nth-child(2) {
   background: #0175f2;
-  box-shadow: inset 0 0 20px 0px black;
-}
-
-.banner__item:nth-child(2):hover{
-   background-image: url("../imagenes/index_dc.jpg");
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;;
+    box-shadow: inset 0 0 20px 0px black;
 }
 
 
+/* MARVEL */
 .marvel {
     font-family: 'Marvel-Regular';
     text-decoration: none;
@@ -88,17 +75,17 @@ html {
     font-weight: 200;
     font-size: 8em;
     transition: all 0.2s;
- 
 }
 
 .marvel:hover {
   border-radius: 7px;
   padding: 5px;
   font-size: 11em;
-  color: white;
+  
 }
+/* MARVEL */
 
-
+/* DC */
 .dc {
   font-family: "DCComics";
   text-decoration: none;

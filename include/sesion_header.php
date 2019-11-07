@@ -14,9 +14,7 @@
       spellcheck="false"
       autocapitalize="on"
     />
-    <a class="buscar-btn">
-      <i class="fa fa-search"></i>
-    </a>
+    <div class="result"></div>
   </div>
 
   <div class="log">
