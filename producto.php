@@ -124,7 +124,7 @@ if(isset($_SESSION['nueva'])){
         <button data-pushbar-close><i class="fas fa-times"></i></button>
         <form class="pushForm" action="#">
           <label for="nombre">Nombre</label>
-          <input name="nombre" id="nombre" type="text" value="<?php echo $row2['nombre']; ?>" disabled>
+          <input name="nombre" id="nombre" type="text" value="<?php echo $row2['nbr_user']; ?>" disabled>
           <label for="email">Email</label>
           <input type="email" id="email" name="email" id="" value="<?php echo $row2['email']; ?>" disabled>
           <label for="fRegistro">Fecha registro</label>
