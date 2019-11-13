@@ -27,12 +27,20 @@
     <th> <p> <?php echo $row['nbr_user']; ?> </p> </th>
     <th> <p> <?php echo $row['nombre']; ?> </p> </th>
     <th> <p> <?php echo $row['cant']; ?> </p> </th>
-    <th> <p> <?php echo $row['total']; ?> </p> </th>
+    <?php
+        if ($row['precio'] == $row['total']) {
+            echo  " <th> <p> - </p> </th> " ;
+        }else {
+             echo  " <th> <p> $ " . $row[ 'precio' ] . " </p> </th> " ;
+        }
+     ?>
+    <th> <p> <?php echo "$ ". $row['total']; ?> </p> </th>
     <th> <p> <?php echo date('d-m-Y',$row['fecha']); ?> </p> </th>
     
 </tr>   
 
-<?php $id_o++; }
+<?php $id_o++; 
+}
 else
 { ?>
 <th><p>  </p> </th>
@@ -40,7 +48,7 @@ else
 
 <th><p> <?php echo $row['nombre'];?> </p> </th>
 <th><p> <?php echo $row['cant'];?> </p> </th>
-<th><p> $<?php echo $row['precio']?> </p> </th>
+<th><p> $ <?php echo $row['precio']?> </p> </th>
 
 <th><p>  </p></th>
 <th><p>  </p></th>

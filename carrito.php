@@ -58,7 +58,14 @@ if(isset($_SESSION['nueva'])){
 
 
 
-
+<!-- MODAL -->
+<div id="open-modal" class="modal-window">
+  <div>
+    <a href="#" title="Close" class="modal-close">Close</a>
+    <?php  include("include/log.php");  ?>
+    </div>
+</div>
+<!-- MODAL -->
 
 
 <?php 
@@ -161,7 +168,7 @@ echo '<style>footer {
     <!-- pushbar -->
 
     <?php 
-      $sql2 = "SELECT * FROM usuario";
+      @$sql2 = "SELECT * FROM usuario WHERE email='".$_SESSION['nueva']."'";
       @$exe = mysqli_query($conexion,$sql2);
       @$row2 = mysqli_fetch_assoc($exe);
     ?>
@@ -197,5 +204,6 @@ include("include/footer.html");
     overlay:true,
   });
 </script>
+<script src="js/login/log.js"></script>
 </body>
 </html>

@@ -152,7 +152,7 @@ $compania = $_REQUEST['compania'];
 <!-- pushbar -->
 
 <?php 
-      $sql2 = "SELECT * FROM usuario";
+       $sql2 = "SELECT * FROM usuario WHERE email='".$_SESSION['nueva']."'";
       $exe = mysqli_query($conexion,$sql2);
       $row2 = mysqli_fetch_assoc($exe);
     ?>

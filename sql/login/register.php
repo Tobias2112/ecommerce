@@ -32,7 +32,7 @@ if(!empty($_POST['nombre']) && !empty($_POST['mail']) && !empty($_POST['contra']
     $codigo = $password.$mail_cod;
 
     
-      $sql = "INSERT INTO usuario (nombre, email, contrasenia, verificacion, codigo, fecha_registro, ultima_conexion) VALUES ('$nombre', '$email', '$password','no verificado', '$codigo','  $fecha_registro', '$fecha_registro')";
+      $sql = "INSERT INTO usuario (nbr_user, email, contrasenia, verificacion, codigo, fecha_registro, ultima_conexion) VALUES ('$nombre', '$email', '$password','no verificado', '$codigo','  $fecha_registro', '$fecha_registro')";
       $insertar = mysqli_query($conexion,$sql); 
 
 

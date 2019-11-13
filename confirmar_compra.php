@@ -55,7 +55,14 @@ if(isset($_SESSION['nueva'])){
   session_destroy();
 }
 ?>
-
+<!-- MODAL -->
+<div id="open-modal" class="modal-window">
+  <div>
+    <a href="#" title="Close" class="modal-close">Close</a>
+    <?php  include("include/log.php");  ?>
+    </div>
+</div>
+<!-- MODAL -->
 
 
 <?php 
@@ -71,7 +78,7 @@ if(!isset($_GET['c'])){
     <!-- pushbar -->
 
     <?php 
-      $sql2 = "SELECT * FROM usuario";
+       $sql2 = "SELECT * FROM usuario WHERE email='".$_SESSION['nueva']."'";
       $exe = mysqli_query($conexion,$sql2);
       $row2 = mysqli_fetch_assoc($exe);
     ?>
@@ -99,6 +106,7 @@ include("include/footer.html");
 ?>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="js/buscador.js"></script>
+
     <script src="js/pushbar/pushbar.js" type="text/javascript"></script>
   <script type="text/javascript">
   new Pushbar({

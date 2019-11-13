@@ -35,6 +35,7 @@
       <th scope="col">Usuario</th>
       <th scope="col">Producto</th>
       <th scope="col">cant</th>
+      <th scope="col">Precio/U</th>
       <th scope="col">total</th>
       <th scope="col">fecha</th>
     </tr>
