@@ -32,13 +32,15 @@ if(!empty($_POST['nombre']) && !empty($_POST['mail']) && !empty($_POST['contra']
     $codigo = $password.$mail_cod;
 
     
-      $sql = "INSERT INTO usuario (nombre, email, contrasenia, verificacion, codigo, fecha_registro, ultima_conexion) VALUES ('$nombre', '$email', '$password','no verificado', '$codigo','  $fecha_registro', '$fecha_registro')";
+      $sql = "INSERT INTO usuario (nbr_user, email, contrasenia, verificacion, codigo, fecha_registro, ultima_conexion) VALUES ('$nombre', '$email', '$password','no verificado', '$codigo','  $fecha_registro', '$fecha_registro')";
       $insertar = mysqli_query($conexion,$sql); 
 
 
       $para = $email;
       $tema = 'Confirmar cuenta';
       $mensaje = 'Acaba de registrarse en'." <a href='#'>Atomic Comic</a><br> ".'Porfavor Haga la confirmacion de cuenta ingresando en este enlace'." <a href='sql/login/confimacion.php?cod=$codigo'>Confirmacion</a> ";
+      $cabecera = "MIME-Version: 1.0\r\n";
+      $cabecera = "Content-type: text/html; charset=iso-8859-1\r\n";
       $cabecera = 'De : Atomicomic@gmail.com'."\r\n".
                   'Para :'.$email."\r\n";
       mail($para, $tema, $mensaje, $cabecera);

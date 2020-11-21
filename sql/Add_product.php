@@ -15,6 +15,7 @@
 
 
 <header>
+	<a href="abm.html"><- Volver</a>
 <h1>Agregar Producto</h1>
 </header>
 
@@ -127,11 +128,14 @@ while($row = mysqli_fetch_assoc($mostrar)){
 <a href="modificar.php?id=<?php echo $row['id'];?>">   <span class="icon-pencil"></span>  </a>
 <a href="eliminar.php?id=<?php echo $row['id'];?>">    <span class="icon-bin"></span>  </a>
 
+
+
 </div>
 
 
 <?php
 }
+mysqli_free_result($mostrar);
 
 ?>
 </div>
@@ -143,12 +147,12 @@ while($row = mysqli_fetch_assoc($mostrar)){
 
 include("conexion.php");
 
-$sql = "SELECT * FROM heroes";
+$sql2 = "SELECT * FROM heroes";
 
-$mostrar = mysqli_query($conexion,$sql);
+$mostrar2 = mysqli_query($conexion,$sql2);
 
 
-while($row = mysqli_fetch_assoc($mostrar)){
+while($row2 = mysqli_fetch_assoc($mostrar2)){
 	?>
 
 
@@ -156,16 +160,16 @@ while($row = mysqli_fetch_assoc($mostrar)){
 
 <div class="comic">
 
-<img src="../imagenes/heroes/<?php echo $row['imagen']; ?>">
+<img src="../imagenes/heroes/<?php echo $row2['imagen']; ?>">
 <p><u>Nombre:</u></p>
-<p  id="nombre"> <?php echo $row['nombre']; ?> </p>
+<p  id="nombre"> <?php echo $row2['nombre']; ?> </p>
 <p><u>Compañia:</u></p>
 <p><?php echo $row['compania']; ?></p>
 
 
 
-<a href="modificar.php?id=<?php echo $row['id'];?>">   <span class="icon-pencil"></span>  </a>
-<a href="eliminar.php?id=<?php echo $row['id'];?>">    <span class="icon-bin"></span>  </a>
+<a href="modificarHeroe.php?id=<?php echo $row2['id_heroe'];?>">   <span class="icon-pencil"></span>  </a>
+<a href="eliminarHeroe.php?id=<?php echo $row2['id_heroe'];?>">    <span class="icon-bin"></span>  </a>
 
 </div>
 

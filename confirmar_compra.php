@@ -1,39 +1,35 @@
-<?php
-include("sql/conexion.php");
- $id = $_REQUEST['comic'];
-
- $titulo = "SELECT nombre FROM comics WHERE id='$id'";
-$titsql = mysqli_query($conexion, $titulo);
-$sql2 = mysqli_fetch_assoc($titsql);
-
-
-?>
-
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <title> <?php echo $sql2['nombre']; ?> </title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carrito</title>
+
     <link rel="icon" href="imagenes/atom.ico">
-    <link rel="stylesheet" href="css/pushbar/pushbar.css">  
+    <link rel="stylesheet" href="css/pushbar/pushbar.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/producto.css">
+    <link rel="stylesheet" href="css/contactenos.css">
     <link rel="stylesheet" href="css/login/log.css">
     <link rel="stylesheet" href="css/login/animated.css">   
-    <link rel="stylesheet" href="css/modal.css"> 
-    <link rel="stylesheet" href="css/buscador.css"> 
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/carrito/carrito.css"> 
+     <link rel="stylesheet" href="css/carrito/estilos.css">
+     <link rel="stylesheet" href="css/buscador.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+    
+</head>
 
-  </head>
-  <body>
+<body>
 
-  <?php
+<?php
+
 session_start();
-
+include("sql/libreria.php");
 if(isset($_SESSION['nueva'])){
   include("include/sesion_header.php");
   include("include/sesion_nav.html");
@@ -57,64 +53,31 @@ if(isset($_SESSION['nueva'])){
   include("include/header.html");
   include("include/nav.html");
   session_destroy();
-} ?>
-
-
-    <div id="open-modal" class="modal-window">
-      <div>
-       <a href="#" title="Close" class="modal-close">Close</a>
-       <?php  include("include/log.php");  ?>
-      </div>
+}
+?>
+<!-- MODAL -->
+<div id="open-modal" class="modal-window">
+  <div>
+    <a href="#" title="Close" class="modal-close">Close</a>
+    <?php  include("include/log.php");  ?>
     </div>
+</div>
+<!-- MODAL -->
 
 
- <?php 
-      
-     
+<?php 
 
-      
+if(!isset($_GET['c'])){
+    confirmarCompra();
+    echo '<a class="finalizar" style="margin: 5% auto;" href="confirmar_compra.php?c=1">Confirmar Compra</a>';
+  }else{
+    comprar();
+  }
+?>
 
-      $sql = "SELECT * FROM comics WHERE id='$id'";
+    <!-- pushbar -->
 
-      $resultado = mysqli_query($conexion,$sql);
-
-      $row = mysqli_fetch_assoc($resultado);
-
-    
-    ?>
-
-    <div class="producto">
-
-
-      <section class="imagen">
-
-      <img class="img_prod" src="imagenes/<?php echo $row['imagen']; ?>" alt="">
-
-      </section>
-      <section class="caract">
-        <p class="nombre"><?php echo $row['nombre']; ?></p>
-        <p class="precio">$<?php echo $row['precio']; ?></p> 
-        <p class="descripcion"><?php echo $row['descripcion']; ?></p>
-        
-        
-            <section class="btn_buy">
-                 <a href="carrito.php?id=<?php echo $row['id']; ?>"> <button type="button" name="button">Añadir a carrito </button>  </a>
-            </section>
-
-            
-            
-
-      </section>
-
-     
-
-    </div>
-
-    
-
-   <!-- pushbar -->
-
-   <?php 
+    <?php 
        $sql2 = "SELECT * FROM usuario WHERE email='".$_SESSION['nueva']."'";
       $exe = mysqli_query($conexion,$sql2);
       $row2 = mysqli_fetch_assoc($exe);
@@ -137,12 +100,13 @@ if(isset($_SESSION['nueva'])){
       </div>
       <!-- pushbar -->
 
+<?php
+include("include/footer.html");
 
-
-    <?php include ("include/footer.html"); ?>
-    <script src="js/login/log.js"></script>
+?>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="js/buscador.js"></script>
+
     <script src="js/pushbar/pushbar.js" type="text/javascript"></script>
   <script type="text/javascript">
   new Pushbar({
@@ -150,5 +114,5 @@ if(isset($_SESSION['nueva'])){
     overlay:true,
   });
 </script>
-  </body>
+</body>
 </html>

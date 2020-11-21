@@ -15,14 +15,14 @@
 
 ::-webkit-input-placeholder {
   /* Edge */
-  color: white;
+  color: white !important;
 }
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: white;
+  color: white !important;
 }
 ::placeholder {
-  color: white;
+  color: white !important;
 }
 
 .btn_content {

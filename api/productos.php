@@ -1,26 +1,23 @@
 <?php
-
 $resultado = NULL;
 $parametros = NULL;
-
-
 if ($_SERVER['REQUEST_METHOD'] == "GET")
 {
-
     $parametros = $_GET;
-    $mysqli = new mysqli("localhost", "root", "", "atomic_comic", 3306);
+    // $mysqli = new mysqli("localhost", "id11022301_atomic", "tobias43314", "id11022301_atomic_comic");
+    $mysqli = new mysqli("localhost", "root", "", "atomic_comic");
     if ($mysqli->connect_errno) {
         echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
     }
     if (isset($parametros['id']))
     {
-        $query = "SELECT * FROM comics WHERE id=".$parametros['id'];
+        $query = "SELECT *
+        FROM comics WHERE id=".$parametros['id'];
         $resultado = $mysqli->query($query);
     } else {
-        $query = "SELECT * FROM comics ORDER BY id ASC";
-        $resultado = $mysqli->query("SELECT * FROM comics ORDER BY id ASC");
+        $query = "SELECT * FROM comics";
+        $resultado = $mysqli->query($query);
     }
-
     $data = [];
     if ($resultado->num_rows > 0)
     {
@@ -28,12 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] == "GET")
         {
             $data[] = $fila;
         }
-
         $respuesta = [
             "status"=> 200,
             "response" => $data
         ];
-        sleep(5);
         echo json_encode($respuesta);
     } else {
         $respuesta = [
@@ -45,7 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] == "GET")
     }
     
 }
-
 if ($_SERVER['REQUEST_METHOD'] == "POST")
 {
     if (isset($_SERVER['CONTENT_TYPE']) && $_SERVER['CONTENT_TYPE'] == 'application/json')
@@ -55,19 +49,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
     } else {
         $parametros = $_POST;
     }
-
-    $mysqli = new mysqli("localhost", "root", "", "atomic_comic", 3306);
+    $mysqli = new mysqli("localhost", "root", "", "atomic_comic");
     if ($mysqli->connect_errno) {
         echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
     }
-    
-    // validar el texto que llega para prevenir inyecciones de sql
-    // $mysqli->error
-    if (isset($parametros['nombre']) && isset($parametros['imagen']) && isset($parametros['precio']) && isset($parametros['descripcion'],isset($parametros['empresa']),isset($parametros['producto'])
+    if (isset($parametros['nombre']) && isset($parametros['precio']) && isset($parametros['descripcion']) && isset($parametros['empresa']))
     {
-        $insertQuery = "INSERT INTO comics (imagen, nombre, descripcion, precio,empresa, producto ) VALUES (";
-        $insertQuery .= "'".$parametros['imagen']."'".','.$parametros['nombre'].','.$parametros['descripcion'].','.$parametros['precio'].','.$parametros['empresa'].','.$parametros['producto'].')';
-
         if($mysqli->query($insertQuery) === TRUE)
         {
             $respuesta = [
@@ -91,4 +78,3 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
     }
     
 }
-

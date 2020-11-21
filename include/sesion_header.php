@@ -14,17 +14,17 @@
       spellcheck="false"
       autocapitalize="on"
     />
-    <a class="buscar-btn">
-      <i class="fa fa-search"></i>
-    </a>
+    <div class="result"></div>
   </div>
 
   <div class="log">
-    <a href="sql/login/logout.php" class="user">
+  <button data-pushbar-target="mypushbar1" value=>
+   <!--  <a href="sql/login/logout.php" class="user"> -->
     <i class="fas fa-user"></i>
-      My Cuenta
-    </a>
-    <a class="cart" href="#"><i class="fas fa-shopping-cart"> </i>
+      Mi Cuenta
+   
+    </button>
+    <a class="cart" href="./carrito.php"><i class="fas fa-shopping-cart"> </i>
            Carrito
      </a>
   </div>
